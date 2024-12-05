@@ -110,13 +110,6 @@ public class EmployeeService {
         return result;
     }
 
-    // Query 3.14: Separate employees younger or equal to 25 years from older than 25
-  /*  public Map<String, List<Employee>> separateByAge() {
-        return employeeRepository.findAll().stream()
-                .collect(Collectors.partitioningBy(e -> e.getAge() <= 25));
-    } */
-
-
     public Employee getOldestEmployee() {
         return employeeRepository.findAll().stream()
                 .max(Comparator.comparingInt(Employee::getAge))
